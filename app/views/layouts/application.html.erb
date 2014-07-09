@@ -23,15 +23,26 @@
              <% if user_signed_in? %>
             <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
             <% else %>
-            <li><%= link_to 'Login', new_user_session_path, method: :get %></li>
-            <li><%= link_to 'Sign Up', new_user_registration_path, method: :get %></li>
+            <li><%= link_to 'Such Home', home_posts_path, method: :get %></li>
+            <li><%= link_to 'So Login', new_user_session_path, method: :get %></li>
+            <li><%= link_to 'Much Sign Up', new_user_registration_path, method: :get %></li>
             <% end %>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>
   </header>
-<p><%= notice %></p>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <% flash.each do |key, value| %>
+          <div class="<%= flash_class(key) %>">
+            <%= value %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 <%= yield %>
 </body>
 </html>
