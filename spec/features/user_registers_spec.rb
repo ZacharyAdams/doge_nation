@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-feature 'user creates a new user', %Q{
+feature 'user creates a new user', %Q(
 As a site visitor
 I want to add myself as a user
 So that other people can enjoy their crazy antics
-} do
+) do
 
   scenario 'user creates a profile' do
 
