@@ -12,7 +12,6 @@ So that I can hide my shame from the world
 
     post = FactoryGirl.create(:post)
     visit post_path(post)
-    save_and_open_page
     click_on "delete-post-#{post.id}"
 
     expect(page).to have_content('Post deleted!')
