@@ -7,16 +7,13 @@ So that I can hide my shame from the world
 ) do
 
   scenario 'user deletes a post' do
-    user = FactoryGirl.build(:user)
-    visit new_user_registration_path
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    fill_in 'Password confirmation', with: user.password
-    click_on 'Sign up'
+    user = FactoryGirl.create(:user)
+    sign_in_as(user)
 
     post = FactoryGirl.create(:post)
     visit post_path(post)
-    click_on "delete-post-#{@post.id}"
+    save_and_open_page
+    click_on "delete-post-#{post.id}"
 
     expect(page).to have_content('Post deleted!')
     expect(page).to_not have_content(post.title)

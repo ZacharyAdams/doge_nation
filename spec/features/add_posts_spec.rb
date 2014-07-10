@@ -7,13 +7,9 @@ I want to add a new post.
 
   scenario 'user can add a post' do
 
-    user = FactoryGirl.build(:user)
+    user = FactoryGirl.create(:user)
+    sign_in_as(user)
     post = FactoryGirl.build(:post)
-    visit new_user_registration_path
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    fill_in 'Password confirmation', with: user.password
-    click_on 'Sign up'
 
     visit new_post_path
 
@@ -24,13 +20,9 @@ I want to add a new post.
   end
   scenario 'user cant add a new post without a body' do
 
-    user = FactoryGirl.build(:user)
+    user = FactoryGirl.create(:user)
+    sign_in_as(user)
     post = FactoryGirl.build(:post)
-    visit new_user_registration_path
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    fill_in 'Password confirmation', with: user.password
-    click_on 'Sign up'
 
     visit new_post_path
 
@@ -40,13 +32,9 @@ I want to add a new post.
   end
     scenario 'user cant add a new post without a title' do
 
-    user = FactoryGirl.build(:user)
+    user = FactoryGirl.create(:user)
+    sign_in_as(user)
     post = FactoryGirl.build(:post)
-    visit new_user_registration_path
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    fill_in 'Password confirmation', with: user.password
-    click_on 'Sign up'
 
     visit new_post_path
 

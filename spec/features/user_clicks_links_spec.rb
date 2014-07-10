@@ -7,12 +7,8 @@ so that I can view all aspects of the website
  ) do
 
   scenario 'user clicks on Such Home' do
-    user = FactoryGirl.build(:user)
-    visit new_user_registration_path
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    fill_in 'Password confirmation', with: user.password
-    click_on 'Sign up'
+    user = FactoryGirl.create(:user)
+    sign_in_as(user)
 
     visit posts_path
 
@@ -21,12 +17,8 @@ so that I can view all aspects of the website
     expect(current_path).to eql(home_posts_path)
   end
   scenario 'user clicks on Very Posts' do
-    user = FactoryGirl.build(:user)
-    visit new_user_registration_path
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    fill_in 'Password confirmation', with: user.password
-    click_on 'Sign up'
+    user = FactoryGirl.create(:user)
+    sign_in_as(user)
 
     visit posts_path
 
@@ -35,12 +27,8 @@ so that I can view all aspects of the website
     expect(current_path).to eql(posts_path)
   end
    scenario 'user clicks on Much New Posts' do
-    user = FactoryGirl.build(:user)
-    visit new_user_registration_path
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    fill_in 'Password confirmation', with: user.password
-    click_on 'Sign up'
+    user = FactoryGirl.create(:user)
+    sign_in_as(user)
 
     visit posts_path
 
@@ -49,13 +37,8 @@ so that I can view all aspects of the website
     expect(current_path).to eql(new_post_path)
   end
   scenario 'user clicks on Logout' do
-    user = FactoryGirl.build(:user)
-
-    visit new_user_registration_path
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    fill_in 'Password confirmation', with: user.password
-    click_on 'Sign up'
+    user = FactoryGirl.create(:user)
+    sign_in_as(user)
 
     click_on 'Logout'
     expect(page).to have_link 'So Login'
