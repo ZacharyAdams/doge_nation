@@ -1,13 +1,13 @@
 <%= @post.title %><br>
 <%= @post.body %>
 <% if current_user == @post.user %>
-  <%= button_to 'Delete', "/posts/#{@post.id}",
+  <%= button_to 'So Delete', "/posts/#{@post.id}",
           method: :delete, data:
           { confirm: 'Much Shibe, Very Warn, Sure you want to delete?' },
           id: "delete-truck-#{@post.id}" %>
 <% end %>
 <% if current_user == @post.user %>
-  <%= button_to 'Edit',
+  <%= button_to 'Much Edit',
       edit_post_path(@post),
       method: :get %>
 <% end %>

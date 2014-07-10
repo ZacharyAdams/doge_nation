@@ -13,4 +13,3 @@ so that I can witness shibe greatness
     expect(page).to have_content('Welcome Fellow Shibes!')
   end
 end
-
