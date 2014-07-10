@@ -23,6 +23,7 @@
              <% if user_signed_in? %>
              <li><%= link_to 'Such Home', home_posts_path, method: :get %></li>
             <li><%= link_to 'Very Posts', posts_path, method: :get %></li>
+            <li><%= link_to 'Much New Posts', new_post_path, method: :get %></li>
             <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
             <% else %>
             <li><%= link_to 'Such Home', home_posts_path, method: :get %></li>
