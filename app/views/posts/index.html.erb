@@ -7,7 +7,7 @@
   <tbody>
     <% @posts.each do |p| %>
       <tr>
-        <td style="width:100%"><%= link_to p.title, post_path(p) %></td>
+        <td style="width:100%"><%= link_to p.title, post_path(p) %> <%= p.created_at.strftime("%b %d, %Y")%> <%= p.user.email %></td>
         </td>
       </tr>
       <% end %>
