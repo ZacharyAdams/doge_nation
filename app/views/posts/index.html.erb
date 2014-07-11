@@ -1,0 +1,15 @@
+<table class="table table-hover">
+  <thead>
+    <tr class="table_header">
+      <th>Recent Shibes Barking</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @posts.each do |p| %>
+      <tr>
+        <td style="width:100%"><%= link_to p.title, post_path(p) %> <%= p.created_at.strftime("%b %d, %Y")%> <%= p.user.email %></td>
+        </td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>

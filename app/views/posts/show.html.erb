@@ -1,0 +1,11 @@
+<%= @post.title %><br>
+<%= @post.body %>
+<% if current_user == @post.user %>
+  <%= button_to 'So Delete', "/posts/#{@post.id}",
+          method: :delete, data:
+          { confirm: 'Much Shibe, Very Warn, Sure you want to delete?' },
+          id: "delete-post-#{@post.id}" %>
+  <%= button_to 'Much Edit',
+      edit_post_path(@post),
+      method: :get, id: "edit-post-#{@post.id}" %>
+<% end %>
