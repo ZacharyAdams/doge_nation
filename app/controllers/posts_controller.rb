@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
    before_action :authenticate_user!, except: [:home]
+   before_action :authorize_user, only: [:new, :create, :destroy, :edit]
 
   def index
     @posts = Post.order(created_at: :desc).limit(10)
@@ -59,6 +60,12 @@ class PostsController < ApplicationController
     if current_user != post.user
       flash[:notice] = 'You did not make this post! Random Shibe.'
       redirect_to post_path
+    end
+  end
+
+  def authorize_user
+    unless user_signed_in? and current_user
+      raise ActionController::RoutingError.new('Not Found')
     end
   end
 
