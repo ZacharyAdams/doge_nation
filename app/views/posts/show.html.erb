@@ -9,3 +9,16 @@
       edit_post_path(@post),
       method: :get, id: "edit-post-#{@post.id}" %>
 <% end %>
+<%= form_for [@post, @reply] do |f| %>
+  <% if @reply.errors.any? %>
+    <ul>
+      <% @reply.errors.full_messages.each do |msg| %>
+        <li> <%= msg %> </li>
+      <% end %>
+    </ul>
+  <% end %>
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+
+  <%= f.submit 'Submit' %>
+<% end %>

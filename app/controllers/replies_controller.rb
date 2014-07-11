@@ -7,8 +7,8 @@ class RepliesController < ApplicationController
     @user = @reply.user
 
     if @reply.save
-      flash[:notice] = 'Your review was saved!'
-      redirect_to food_truck_path(@food_truck)
+      flash[:notice] = 'Your reply was saved!'
+      redirect_to post_path(@post)
     else
       @post.replies.delete(@reply)
       flash[:notice] = 'Your reply could not be saved'
@@ -41,5 +41,3 @@ class RepliesController < ApplicationController
   end
 end
 
-
-end

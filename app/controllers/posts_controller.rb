@@ -6,11 +6,9 @@ class PostsController < ApplicationController
     @posts = Post.order(created_at: :desc).limit(10)
   end
 
-  def home
-  end
-
   def show
     @post = Post.find(params[:id])
+    @reply = Reply.new
   end
 
   def new

@@ -14,7 +14,7 @@ so that I can view all aspects of the website
 
     expect(page).to have_link 'Such Home'
     click_on 'Such Home'
-    expect(current_path).to eql(home_posts_path)
+    expect(current_path).to eql('/static_pages/home')
   end
   scenario 'user clicks on Very Posts' do
     user = FactoryGirl.create(:user)

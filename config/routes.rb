@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
+  root :to => 'static_pages#home'
+  get '/static_pages/home', :to =>'static_pages#home'
+  get 'static_pages/home'
   devise_for :users
-  root to: "posts#home"
   resources :posts do
-    collection do
-      get 'home'
-    end
+        resources :replies, only: [:create, :new, :destroy, :edit, :update]
   end
 end
