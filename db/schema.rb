@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20140709194747) do
   create_table "posts", force: true do |t|
     t.string   "title",      null: false
     t.text     "body",       null: false
-    t.integer  "uid",        null: false
+    t.integer  "user_id",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
