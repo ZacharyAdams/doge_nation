@@ -17,8 +17,7 @@
         method: :delete, data:
         { confirm: 'Much Shibe, Very Warn, Sure you want to delete?' },
         id: "delete-reply-#{reply.id}" %>
-
-      <%= form_for [@post, reply], html:
+        <%= form_for [@post, reply], html:
         { id: "editing-reply-#{reply.id}" },
         url: post_reply_path(@post, reply),
         method: :patch do |f| %>
@@ -30,6 +29,7 @@
               <% end %>
             </ul>
           <% end %>
+          <h5> edit reply </h5>
           <%= f.label :body %>
           <%= f.text_area :body %>
           <%= f.submit "Save changes" %>
@@ -45,6 +45,7 @@
       <% end %>
     </ul>
   <% end %>
+  <h5> Add A reply </h5>
   <%= f.label :body %>
   <%= f.text_area :body %>
 
