@@ -21,7 +21,7 @@ class RepliesController < ApplicationController
     @reply = Reply.find(params[:id])
     if @reply.destroy
       flash[:notice] = 'Reply deleted!'
-      redirect_to reply_path(@reply)
+      redirect_to post_path(@post)
     end
   end
 
