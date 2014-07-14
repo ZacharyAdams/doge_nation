@@ -16,7 +16,7 @@ scenario 'user edits a reply' do
     within "#editing-reply-#{reply.id}" do
       fill_in 'reply_body', with: 'such wowzors'
     end
-    click_on 'Save changes'
+    click_on 'Much Edit Reply'
 
     expect(page).to have_content('Changes saved!')
     expect(page).to have_content('such wowzors')
@@ -30,6 +30,6 @@ scenario 'user edits a reply' do
     visit post_path(post)
 
     expect(page).to have_content(reply.body)
-    expect(page).to_not have_button('Save changes')
+    expect(page).to_not have_button('Much Edit')
   end
 end
