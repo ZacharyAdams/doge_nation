@@ -1,5 +1,5 @@
 .devise-registrations {
-  background: image-url('such_sign.jpg') no-repeat center center fixed;
+  background: image-url('max_doge.png') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -7,7 +7,7 @@
 }
 
 .devise-sessions-new {
-  background: image-url('such_sign.jpg') no-repeat center center fixed;
+  background: image-url('max_doge.png') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -15,7 +15,7 @@
 }
 
 .panel-default {
-opacity: 0.9;
+opacity: 0.7;
 margin-top:30px;
 }
 .form-group.last { margin-bottom:0px; }
@@ -23,4 +23,12 @@ margin-top:30px;
 .centerTable {
   width: 20%;
   margin: 0 auto;
+}
+
+.posts-new {
+  background: image-url('appledoge.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }

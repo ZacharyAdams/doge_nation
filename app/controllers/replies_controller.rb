@@ -1,5 +1,5 @@
 class RepliesController < ApplicationController
-
+  before_action :authorize_user, only: [:new, :create, :destroy, :edit]
  def create
     @post = Post.find(params[:post_id])
     @reply = @post.replies.build(reply_params)
@@ -35,6 +35,12 @@ class RepliesController < ApplicationController
   end
 
   private
+
+  def authorize_user
+    unless user_signed_in? and current_user
+      raise ActionController::RoutingError.new('Not Found')
+    end
+  end
 
   def reply_params
     params.require(:reply).permit(:body)
