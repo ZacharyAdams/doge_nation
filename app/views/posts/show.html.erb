@@ -9,3 +9,45 @@
       edit_post_path(@post),
       method: :get, id: "edit-post-#{@post.id}" %>
 <% end %>
+<% @post.replies.each do |reply| %>
+  <ul>
+    <li><%= reply.body %></li>
+    <% if reply.user == current_user %>
+      <%= button_to 'Delete', post_reply_path(@post, reply),
+        method: :delete, data:
+        { confirm: 'Much Shibe, Very Warn, Sure you want to delete?' },
+        id: "delete-reply-#{reply.id}" %>
+        <%= form_for [@post, reply], html:
+        { id: "editing-reply-#{reply.id}" },
+        url: post_reply_path(@post, reply),
+        method: :patch do |f| %>
+          <% if reply.errors.any? %>
+            <p>There were errors with your submission:</p>
+            <ul>
+              <% review.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          <% end %>
+          <h5> edit reply </h5>
+          <%= f.label :body %>
+          <%= f.text_area :body %>
+          <%= f.submit "Save changes" %>
+        <% end %>
+      <% end %>
+  </ul>
+<% end %>
+<%= form_for [@post, @reply] do |f| %>
+  <% if @reply.errors.any? %>
+    <ul>
+      <% @reply.errors.full_messages.each do |msg| %>
+        <li> <%= msg %> </li>
+      <% end %>
+    </ul>
+  <% end %>
+  <h5> Add A reply </h5>
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+
+  <%= f.submit 'Submit' %>
+<% end %>

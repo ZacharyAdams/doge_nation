@@ -8,7 +8,7 @@ so that I can witness shibe greatness
 
     scenario 'user visits home page' do
 
-    visit home_posts_path
+    visit static_pages_path
 
     expect(page).to have_content('Welcome Fellow Shibes!')
   end
