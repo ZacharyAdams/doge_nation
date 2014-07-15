@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   resources :static_pages, only: [:index]
   devise_for :users
   resources :posts do
-        resources :replies, only: [:create, :new, :destroy, :edit, :update]
+    resources :replies, only: [:create, :new, :destroy, :edit, :update]
   end
 end
