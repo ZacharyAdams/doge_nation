@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'kaminari'
 gem 'devise'
 gem 'devise-bootstrap-views'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

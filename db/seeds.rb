@@ -9,5 +9,5 @@
 
 10.times do |p|
   posts = Post.create(title: "such wow #{p}",
-  body: 'much amaze', uid: 1)
+  body: 'much amaze', user_idt: 1)
 end
