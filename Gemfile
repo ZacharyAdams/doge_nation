@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 gem 'kaminari'
 gem 'devise'
+
 gem 'devise-bootstrap-views'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
@@ -41,6 +42,9 @@ gem 'spring',        group: :development
     gem 'dotenv-rails'
   end
 
+
+gem 'rails_12factor', group: :production
+gem 'unicorn'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
