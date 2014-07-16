@@ -4,4 +4,12 @@ class Post < ActiveRecord::Base
   validates :user, presence: true
   belongs_to :user
   has_many :replies
+
+  def self.search(search)
+    if search
+      Post.where('title ILIKE ?', "%#{search}%")
+    else
+      Post.all
+    end
+  end
 end
