@@ -4,7 +4,8 @@ ruby "2.0.0"
 
 gem 'kaminari'
 gem 'devise'
-
+gem "fog", "~> 1.3.1"
+gem 'carrierwave'
 gem 'devise-bootstrap-views'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
