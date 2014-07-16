@@ -3,7 +3,7 @@
       <div class="col-lg-12">
         <%= form_tag(posts_path, method: "get", id: "search-form") do %>
           <%= text_field_tag :search, params[:search], placeholder: "Search For Posts" %>
-          <%= submit_tag "Much Search", class: "btn btn-danger btn-lg btn3d" %>
+          <%= submit_tag "Much Search", class: "btn btn-danger" %>
         <% end %>
       </div>
   </div>
