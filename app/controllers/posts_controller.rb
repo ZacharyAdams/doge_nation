@@ -3,7 +3,7 @@ class PostsController < ApplicationController
    before_action :authorize_user, only: [:new, :create, :destroy, :edit]
 
   def index
-    @posts = Post.order(created_at: :desc).limit(10).page(params[:page])
+    @posts = Post.search(params[:search]).order(created_at: :desc).limit(10).page(params[:page])
   end
 
   def show
