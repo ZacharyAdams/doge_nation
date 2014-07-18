@@ -3,6 +3,7 @@
     <div class="span4 well" style="padding-bottom:0">
       <%= @post.title %><br>
       <%= @post.body %><br>
+      <%= @post.user.email %>
       <% if current_user == @post.user %>
       <%= button_to 'So Delete', "/posts/#{@post.id}",
               method: :delete, data:
