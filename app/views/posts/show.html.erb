@@ -20,7 +20,7 @@
      <div class="container">
         <div class="row">
           <div class="span4 well" style="padding-bottom:0">
-            <li><%= reply.body %> By: <%= reply.user.email%></li>
+            <li><%= reply.body %> By: <%= image_tag(reply.user.avatar.url, size: "80x80") %><%= reply.user.email%></li>
               <% if reply.user == current_user %>
                 <%= button_to 'So Delete', post_reply_path(@post, reply),
                     method: :delete, data:
